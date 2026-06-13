@@ -100,9 +100,10 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
         <div class="text-5xl mb-5" aria-hidden="true">⚡</div>
         <h3 class="text-2xl font-display mb-3" style="color: oklch(72% 0.26 135);">Archetype ECS</h3>
         <p class="leading-relaxed" style="color: oklch(78% 0.04 280);">
-          A custom cache-coherent, archetype-based Entity Component System means
-          thousands of entities without the overhead. Chunk-based SoA storage with
-          64-byte alignment for SIMD operations keeps frame times flat.
+          A custom archetype-based Entity Component System with cache-efficient SoA
+          storage. Each component type is stored contiguously so systems iterate only
+          the data they need. Compose entities from components — no inheritance, no
+          virtual dispatch.
         </p>
       </div>
 
@@ -110,9 +111,9 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
         <div class="text-5xl mb-5" aria-hidden="true">🔮</div>
         <h3 class="text-2xl font-display mb-3" style="color: oklch(72% 0.26 135);">Integrated ImGui Editor</h3>
         <p class="leading-relaxed" style="color: oklch(78% 0.04 280);">
-          Dear ImGui is baked in, not bolted on. Inspect entities, live-edit component
-          values, run Lua from the console, and read the profiler — all within the same
-          window as the running game. Dockable layout, persisted across sessions.
+          Dear ImGui is baked in, not bolted on. Inspect and live-edit entities while
+          the game runs, execute Lua from an in-editor console, and track frame times
+          in the profiler. Dockable layout with persistent window arrangement.
         </p>
       </div>
 
@@ -122,7 +123,7 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
         <p class="leading-relaxed" style="color: oklch(78% 0.04 280);">
           One CMake project targets Windows, Linux, macOS, and Android. SDL3 handles
           the platform abstraction; vcpkg handles the dependency graph. A unified
-          pipeline produces NSIS installers, TGZ archives, DMGs, and APKs.
+          pipeline produces installers, archives, DMGs, and APKs.
         </p>
       </div>
 
