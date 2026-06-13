@@ -33,7 +33,10 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addFilter('currentYear', () => new Date().getFullYear());
 
+  const pathPrefix = process.env.PATH_PREFIX ?? '/';
+
   return {
+    pathPrefix,
     dir: {
       input:    'src',
       output:   'dist',
