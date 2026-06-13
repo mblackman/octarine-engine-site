@@ -125,12 +125,26 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
       <div class="card bg-base-200 card-magical p-8">
         <div class="text-5xl mb-5" aria-hidden="true">🌍</div>
         <h3 class="text-2xl font-display mb-3" style="color: oklch(72% 0.26 135);">Multi-Platform Shipping</h3>
-        <p class="leading-relaxed" style="color: oklch(78% 0.04 280);">
-          The same CMake project produces installers for Windows, archives for Linux,
-          DMGs for macOS, and APKs for Android. SDL3 handles the platform differences;
-          vcpkg handles the dependency graph without asking you to think about it.
-          Four targets. One codebase. No port required.
+        <p class="leading-relaxed mb-5" style="color: oklch(78% 0.04 280);">
+          The same CMake project targets all four. SDL3 handles the platform
+          differences; vcpkg handles the dependency graph without asking you to
+          think about it. One codebase. No port required.
         </p>
+        <div class="flex flex-wrap gap-2">
+          {% set platforms = [
+            { name: "Windows", artifact: "installer", icon: "🪟" },
+            { name: "Linux",   artifact: "archive",   icon: "🐧" },
+            { name: "macOS",   artifact: "DMG",       icon: "🍎" },
+            { name: "Android", artifact: "APK",       icon: "🤖" }
+          ] %}
+          {% for p in platforms %}
+          <span class="badge badge-outline gap-1 py-3"
+                style="border-color: oklch(65% 0.28 305 / 0.35); color: oklch(78% 0.04 280); font-size: 0.75rem;">
+            {{ p.icon }} {{ p.name }}
+            <span style="color: oklch(50% 0.05 280);">· {{ p.artifact }}</span>
+          </span>
+          {% endfor %}
+        </div>
       </div>
 
     </div>
@@ -254,43 +268,6 @@ load_entity({
   </div>
 </section>
 
-
-{# ═══════════════════════════════════════════════════════════════
-   PLATFORM SUPPORT
-════════════════════════════════════════════════════════════════ #}
-<section class="py-28 px-6" id="platforms"
-         style="background: oklch(11% 0.03 280 / 0.4);">
-  <div class="max-w-4xl mx-auto">
-
-    <div class="text-center mb-20">
-      <div class="text-primary text-2xl mb-4 opacity-50" aria-hidden="true">✦</div>
-      <h2 class="text-4xl md:text-5xl font-display glow-octarine mb-4">
-        Realms Supported
-      </h2>
-      <p class="italic" style="color: oklch(55% 0.05 280);">
-        "The same source tree. Four operating systems. One build pipeline."
-      </p>
-    </div>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      {% set platforms = [
-        { name: "Windows", icon: "🪟" },
-        { name: "Linux",   icon: "🐧" },
-        { name: "macOS",   icon: "🍎" },
-        { name: "Android", icon: "🤖" }
-      ] %}
-      {% for platform in platforms %}
-      <div class="card bg-base-200 card-magical p-8 text-center">
-        <div class="text-5xl mb-4" aria-hidden="true">{{ platform.icon }}</div>
-        <div class="text-lg font-display text-primary">{{ platform.name }}</div>
-        <div class="mt-3">
-          <span class="badge badge-success badge-sm">Supported</span>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
 
 
 {# ═══════════════════════════════════════════════════════════════
