@@ -294,26 +294,110 @@ load_entity({
 
 
 {# ═══════════════════════════════════════════════════════════════
-   CTA + FOOTER
+   GETTING STARTED
 ════════════════════════════════════════════════════════════════ #}
-<footer class="py-28 px-6 text-center" id="get-started">
+<section class="py-28 px-6" id="get-started">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-20">
+      <div class="text-accent text-2xl mb-4 opacity-50" aria-hidden="true">✦</div>
+      <h2 class="text-4xl md:text-5xl font-display glow-gold mb-4"
+          style="color: oklch(78% 0.18 58);">
+        Begin Your Conjuring
+      </h2>
+      <p class="italic" style="color: oklch(55% 0.05 280);">
+        "Clone to running code in considerably less time than it takes to read a spellbook"
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+
+      <div class="card bg-base-200 card-magical p-8">
+        <div class="text-4xl font-display text-primary opacity-40 mb-4" aria-hidden="true">I</div>
+        <h3 class="text-xl font-display mb-3" style="color: oklch(78% 0.18 58);">Get the Engine</h3>
+        <p class="text-sm leading-relaxed mb-4" style="color: oklch(72% 0.04 280);">
+          Download a pre-built release from GitHub — binaries are available for
+          Windows, Linux, and macOS. Or clone the repo and build with CMake presets;
+          vcpkg handles the dependencies without further negotiation.
+        </p>
+        <a href="https://github.com/mblackman/Octarine-Engine/releases"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-display tracking-wide"
+           style="color: oklch(65% 0.28 305);">
+          View releases →
+        </a>
+      </div>
+
+      <div class="card bg-base-200 card-magical p-8">
+        <div class="text-4xl font-display text-primary opacity-40 mb-4" aria-hidden="true">II</div>
+        <h3 class="text-xl font-display mb-3" style="color: oklch(78% 0.18 58);">Create a Project</h3>
+        <p class="text-sm leading-relaxed mb-4" style="color: oklch(72% 0.04 280);">
+          A project is a directory with a <code class="text-secondary">config.ini</code>
+          and a Lua startup script. The engine has no strong opinions about folder
+          structure beyond that, which is a refreshing change from most software.
+        </p>
+        <a href="https://github.com/mblackman/Octarine-Engine/blob/main/docs/making-games.md"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-display tracking-wide"
+           style="color: oklch(65% 0.28 305);">
+          Project guide →
+        </a>
+      </div>
+
+      <div class="card bg-base-200 card-magical p-8">
+        <div class="text-4xl font-display text-primary opacity-40 mb-4" aria-hidden="true">III</div>
+        <h3 class="text-xl font-display mb-3" style="color: oklch(78% 0.18 58);">Write Lua, Run the Editor</h3>
+        <p class="text-sm leading-relaxed mb-4" style="color: oklch(72% 0.04 280);">
+          Launch the editor pointed at your project directory, write game logic in Lua,
+          and reload the scene to see changes. Repeat until you have a game, or until
+          you've learned something useful about your design.
+        </p>
+        <a href="https://github.com/mblackman/Octarine-Engine/blob/main/docs/QUICKSTART.md"
+           target="_blank" rel="noopener noreferrer"
+           class="text-sm font-display tracking-wide"
+           style="color: oklch(65% 0.28 305);">
+          Quickstart guide →
+        </a>
+      </div>
+
+    </div>
+
+    {# Example project callout #}
+    <div class="card card-magical p-6 flex flex-col md:flex-row items-start md:items-center gap-4"
+         style="background: oklch(11% 0.03 280);">
+      <div class="text-3xl" aria-hidden="true">📖</div>
+      <div class="flex-1">
+        <div class="font-display text-primary mb-1">See a complete example</div>
+        <p class="text-sm" style="color: oklch(62% 0.05 280);">
+          The <strong class="text-base-content">Octarine-Engine-Example</strong> repository
+          demonstrates components, scenes, physics, audio, and the asset pipeline in a
+          working game. A useful reference when the docs run out of answers.
+        </p>
+      </div>
+      <a href="https://github.com/mblackman/Octarine-Engine-Example"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn-sm btn-outline shrink-0"
+         style="border-color: oklch(65% 0.28 305 / 0.5); color: oklch(75% 0.15 305);">
+        View Example ↗
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+{# ═══════════════════════════════════════════════════════════════
+   FOOTER
+════════════════════════════════════════════════════════════════ #}
+<footer class="py-20 px-6 text-center" id="footer">
   <div class="max-w-3xl mx-auto">
 
-    <div class="text-primary text-3xl mb-10 opacity-40 tracking-widest" aria-hidden="true">
+    <div class="text-primary text-3xl mb-10 opacity-30 tracking-widest" aria-hidden="true">
       ✦ &nbsp;✦ &nbsp;✦
     </div>
 
-    <h2 class="text-4xl md:text-5xl font-display glow-gold mb-4"
-        style="color: oklch(78% 0.18 58);">
-      Begin Your Conjuring
-    </h2>
-
-    <p class="text-lg mb-3 leading-relaxed" style="color: oklch(72% 0.04 280);">
+    <p class="text-lg mb-3 leading-relaxed" style="color: oklch(55% 0.04 280);">
       MIT licensed. No royalties. No subscription. No dark bargains.
-    </p>
-    <p class="text-base mb-12" style="color: oklch(50% 0.05 280);">
-      A C++20 compiler, CMake, and vcpkg. The engine handles everything else,
-      including the parts you didn't know needed handling.
     </p>
 
     <div class="flex flex-wrap gap-4 justify-center mb-12">

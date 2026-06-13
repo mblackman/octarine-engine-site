@@ -26,8 +26,29 @@
   <!-- Starfield canvas — fixed behind all content -->
   <canvas id="starfield" class="fixed inset-0 w-full h-full pointer-events-none" style="z-index:0"></canvas>
 
-  <!-- Page content -->
-  <div class="relative" style="z-index:1">
+  <!-- Sticky navigation -->
+  <nav class="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-3"
+       style="background: oklch(8% 0.02 280 / 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid oklch(65% 0.28 305 / 0.12);">
+    <a href="#" class="font-display text-primary text-lg tracking-wide"
+       style="text-shadow: 0 0 20px oklch(65% 0.28 305 / 0.5);">
+      Octarine
+    </a>
+    <div class="hidden md:flex items-center gap-7 text-sm" style="color: oklch(62% 0.05 280);">
+      <a href="#features"  class="hover:text-primary  transition-colors duration-200">Features</a>
+      <a href="#stack"     class="hover:text-accent   transition-colors duration-200">Stack</a>
+      <a href="#code"      class="hover:text-secondary transition-colors duration-200">Example</a>
+      <a href="#platforms" class="hover:text-primary  transition-colors duration-200">Platforms</a>
+      <a href="#get-started" class="hover:text-accent transition-colors duration-200">Get Started</a>
+    </div>
+    <a href="https://github.com/mblackman/Octarine-Engine"
+       target="_blank" rel="noopener noreferrer"
+       class="btn btn-sm btn-outline btn-primary font-display text-xs tracking-wider">
+      GitHub ↗
+    </a>
+  </nav>
+
+  <!-- Page content — padded so first section clears the fixed nav -->
+  <div class="relative" style="z-index:1; padding-top: 52px;">
     {{ content | safe }}
   </div>
 
