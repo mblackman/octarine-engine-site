@@ -42,9 +42,11 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
 
     <p class="text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
        style="color: oklch(80% 0.04 280);">
-      A lightweight <strong class="text-primary">C++20</strong> 2D game engine.
-      Write your game in <strong class="text-secondary">Lua</strong>, ship it everywhere.
-      Archetype ECS, SDL3 rendering, and a full ImGui editor — all open source.
+      Named for the colour visible only to wizards and cats —
+      a <strong class="text-primary">C++20</strong> 2D game engine where all your
+      game logic lives in <strong class="text-secondary">Lua</strong>.
+      Archetype ECS, SDL3 rendering, and a built-in ImGui editor.
+      MIT licensed, and perhaps surprisingly, free of dark rituals.
     </p>
 
     <div class="flex flex-wrap gap-4 justify-center">
@@ -62,7 +64,7 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
     </div>
 
     <div class="mt-16 text-sm animate-bounce" style="color: oklch(50% 0.05 280);">
-      ↓ &nbsp;scroll to explore
+      ↓ &nbsp;the interesting parts are below
     </div>
   </div>
 </section>
@@ -80,7 +82,7 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
         Spells in the Toolkit
       </h2>
       <p class="italic" style="color: oklch(55% 0.05 280);">
-        "Every wizard needs their implements"
+        "Every working wizard needs their tools — preferably ones that don't bite"
       </p>
     </div>
 
@@ -90,9 +92,10 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
         <div class="text-5xl mb-5" aria-hidden="true">🌙</div>
         <h3 class="text-2xl font-display mb-3" style="color: oklch(72% 0.26 135);">Lua-First Scripting</h3>
         <p class="leading-relaxed" style="color: oklch(78% 0.04 280);">
-          Write all your game logic in Lua 5.4 — no C++ required. Hot-reload scripts
-          while the engine runs, and use auto-generated EmmyLua stubs for full IDE
-          autocomplete. The C++ core stays out of your way until you need raw speed.
+          All your game logic lives in Lua 5.4. The engine's C++ internals are there
+          if you need them, but you probably won't. Hot-reload your scenes while the
+          engine is running, and auto-generated EmmyLua stubs mean your editor knows
+          what you're trying to type before you've quite finished typing it.
         </p>
       </div>
 
@@ -100,10 +103,11 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
         <div class="text-5xl mb-5" aria-hidden="true">⚡</div>
         <h3 class="text-2xl font-display mb-3" style="color: oklch(72% 0.26 135);">Archetype ECS</h3>
         <p class="leading-relaxed" style="color: oklch(78% 0.04 280);">
-          A custom archetype-based Entity Component System with cache-efficient SoA
-          storage. Each component type is stored contiguously so systems iterate only
-          the data they need. Compose entities from components — no inheritance, no
-          virtual dispatch.
+          An entity is just a number — a bare ID with no strong opinions about what
+          it is. What it <em>does</em> depends entirely on its components. The archetype
+          ECS stores each component type contiguously so systems only touch the data
+          they actually need. There is no class hierarchy to inherit from, which most
+          developers find to be a relief.
         </p>
       </div>
 
@@ -111,9 +115,10 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
         <div class="text-5xl mb-5" aria-hidden="true">🔮</div>
         <h3 class="text-2xl font-display mb-3" style="color: oklch(72% 0.26 135);">Integrated ImGui Editor</h3>
         <p class="leading-relaxed" style="color: oklch(78% 0.04 280);">
-          Dear ImGui is baked in, not bolted on. Inspect and live-edit entities while
-          the game runs, execute Lua from an in-editor console, and track frame times
-          in the profiler. Dockable layout with persistent window arrangement.
+          Think of it as a window into the running simulation. While the game is
+          running you can inspect entities, edit their component values, and type
+          Lua directly into a console. Frame times live in the profiler. The dockable
+          layout remembers where you left things, which is more than most editors manage.
         </p>
       </div>
 
@@ -121,9 +126,10 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
         <div class="text-5xl mb-5" aria-hidden="true">🌍</div>
         <h3 class="text-2xl font-display mb-3" style="color: oklch(72% 0.26 135);">Multi-Platform Shipping</h3>
         <p class="leading-relaxed" style="color: oklch(78% 0.04 280);">
-          One CMake project targets Windows, Linux, macOS, and Android. SDL3 handles
-          the platform abstraction; vcpkg handles the dependency graph. A unified
-          pipeline produces installers, archives, DMGs, and APKs.
+          The same CMake project produces installers for Windows, archives for Linux,
+          DMGs for macOS, and APKs for Android. SDL3 handles the platform differences;
+          vcpkg handles the dependency graph without asking you to think about it.
+          Four targets. One codebase. No port required.
         </p>
       </div>
 
@@ -146,18 +152,18 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
         The Ingredients
       </h2>
       <p class="italic" style="color: oklch(55% 0.05 280);">
-        "Good magic requires quality components"
+        "Open source, well-maintained, and none of them will try to invoice you"
       </p>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
       {% set techs = [
-        { name: "C++20",       desc: "Core engine",        icon: "⚙️",  hue: "305" },
-        { name: "SDL3",        desc: "Rendering & input",  icon: "🖼️",  hue: "200" },
-        { name: "Lua 5.4",     desc: "Game scripting",     icon: "📜",  hue: "135" },
-        { name: "GLM",         desc: "Math library",       icon: "📐",  hue: "58"  },
-        { name: "Dear ImGui",  desc: "Editor UI",          icon: "🧰",  hue: "305" },
-        { name: "vcpkg",       desc: "Dependency management", icon: "📦", hue: "200" }
+        { name: "C++20",       desc: "The bones of the thing",       icon: "⚙️",  hue: "305" },
+        { name: "SDL3",        desc: "Windows, pixels, gamepads",    icon: "🖼️",  hue: "200" },
+        { name: "Lua 5.4",     desc: "Your incantations",            icon: "📜",  hue: "135" },
+        { name: "GLM",         desc: "Vectors and matrices",         icon: "📐",  hue: "58"  },
+        { name: "Dear ImGui",  desc: "The instrument panel",         icon: "🧰",  hue: "305" },
+        { name: "vcpkg",       desc: "Handles the fetch quests",     icon: "📦",  hue: "200" }
       ] %}
       {% for tech in techs %}
       <div class="card bg-base-200 card-magical p-6 text-center">
@@ -184,7 +190,7 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
         See the Spell
       </h2>
       <p class="italic" style="color: oklch(55% 0.05 280);">
-        "Write Lua. Ship games."
+        "A complete moving player entity. The engine handles the rest."
       </p>
     </div>
 
@@ -262,7 +268,7 @@ load_entity({
         Realms Supported
       </h2>
       <p class="italic" style="color: oklch(55% 0.05 280);">
-        "Magic travels far"
+        "The same source tree. Four operating systems. One build pipeline."
       </p>
     </div>
 
@@ -306,7 +312,8 @@ load_entity({
       MIT licensed. No royalties. No subscription. No dark bargains.
     </p>
     <p class="text-base mb-12" style="color: oklch(50% 0.05 280);">
-      Get started in minutes — CMake, vcpkg, and a C++20 compiler is all you need.
+      A C++20 compiler, CMake, and vcpkg. The engine handles everything else,
+      including the parts you didn't know needed handling.
     </p>
 
     <div class="flex flex-wrap gap-4 justify-center mb-12">
