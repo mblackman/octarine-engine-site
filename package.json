@@ -1,0 +1,19 @@
+{
+  "name": "octarine-engine-site",
+  "version": "1.0.0",
+  "description": "Marketing site for the Octarine Engine",
+  "type": "module",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "cssnano": "^7.0.0",
+    "daisyui": "^5.0.0",
+    "postcss": "^8.5.0",
+    "tailwindcss": "^4.0.0"
+  }
+}

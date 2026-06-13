@@ -1,0 +1,346 @@
+---
+layout: base
+title: "Octarine Engine — The Color of Magic, in Your Code"
+description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype ECS, SDL3 rendering, and an integrated ImGui editor. MIT licensed. Ship to Windows, Linux, macOS, and Android."
+---
+
+{# ═══════════════════════════════════════════════════════════════
+   HERO
+════════════════════════════════════════════════════════════════ #}
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden px-6 py-24">
+
+  {# Animated arcane rings #}
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
+    <div class="absolute w-[700px] h-[700px] rounded-full opacity-[0.06]"
+         style="border: 1px solid oklch(65% 0.28 305); animation: spin-cw 28s linear infinite;"></div>
+    <div class="absolute w-[520px] h-[520px] rounded-full opacity-[0.08]"
+         style="border: 1px solid oklch(78% 0.18 58); animation: spin-ccw 20s linear infinite;"></div>
+    <div class="absolute w-[360px] h-[360px] rounded-full opacity-[0.10]"
+         style="border: 1px solid oklch(72% 0.26 135); animation: spin-cw 14s linear infinite;"></div>
+    <div class="absolute w-[200px] h-[200px] rounded-full opacity-[0.12]"
+         style="border: 1px dashed oklch(65% 0.28 305); animation: spin-ccw 9s linear infinite;"></div>
+  </div>
+
+  <div class="text-center max-w-4xl mx-auto relative" style="z-index:2">
+
+    {# Floating sparkle #}
+    <div class="text-5xl mb-6 text-primary" style="animation: float 5s ease-in-out infinite; opacity:0.7;"
+         aria-hidden="true">✦</div>
+
+    <h1 class="text-7xl md:text-9xl font-bold glow-octarine mb-3 tracking-wide font-display leading-none">
+      Octarine
+    </h1>
+
+    <p class="text-xl md:text-3xl text-accent glow-gold font-display mb-6 tracking-[0.3em] uppercase">
+      Engine
+    </p>
+
+    <p class="text-lg md:text-xl italic mb-10 max-w-xl mx-auto leading-relaxed"
+       style="color: oklch(72% 0.06 280);">
+      "The colour of magic itself."
+    </p>
+
+    <p class="text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
+       style="color: oklch(80% 0.04 280);">
+      A lightweight <strong class="text-primary">C++20</strong> 2D game engine.
+      Write your game in <strong class="text-secondary">Lua</strong>, ship it everywhere.
+      Archetype ECS, SDL3 rendering, and a full ImGui editor — all open source.
+    </p>
+
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="https://github.com/mblackman/Octarine-Engine"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn-lg btn-magical px-8">
+        ✦ &nbsp;View on GitHub
+      </a>
+      <a href="https://github.com/mblackman/Octarine-Engine/blob/main/docs/QUICKSTART.md"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn-lg btn-outline px-8"
+         style="border-color: oklch(78% 0.18 58 / 0.6); color: oklch(78% 0.18 58);">
+        Quickstart Guide →
+      </a>
+    </div>
+
+    <div class="mt-16 text-sm animate-bounce" style="color: oklch(50% 0.05 280);">
+      ↓ &nbsp;scroll to explore
+    </div>
+  </div>
+</section>
+
+
+{# ═══════════════════════════════════════════════════════════════
+   FEATURES
+════════════════════════════════════════════════════════════════ #}
+<section class="py-28 px-6" id="features">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-20">
+      <div class="text-primary text-2xl mb-4 opacity-50" aria-hidden="true">✦</div>
+      <h2 class="text-4xl md:text-5xl font-display glow-octarine mb-4">
+        Spells in the Toolkit
+      </h2>
+      <p class="italic" style="color: oklch(55% 0.05 280);">
+        "Every wizard needs their implements"
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <div class="card bg-base-200 card-magical p-8">
+        <div class="text-5xl mb-5" aria-hidden="true">🌙</div>
+        <h3 class="text-2xl font-display mb-3" style="color: oklch(72% 0.26 135);">Lua-First Scripting</h3>
+        <p class="leading-relaxed" style="color: oklch(78% 0.04 280);">
+          Write all your game logic in Lua 5.4 — no C++ required. Hot-reload scripts
+          while the engine runs, and use auto-generated EmmyLua stubs for full IDE
+          autocomplete. The C++ core stays out of your way until you need raw speed.
+        </p>
+      </div>
+
+      <div class="card bg-base-200 card-magical p-8">
+        <div class="text-5xl mb-5" aria-hidden="true">⚡</div>
+        <h3 class="text-2xl font-display mb-3" style="color: oklch(72% 0.26 135);">Archetype ECS</h3>
+        <p class="leading-relaxed" style="color: oklch(78% 0.04 280);">
+          A custom cache-coherent, archetype-based Entity Component System means
+          thousands of entities without the overhead. Chunk-based SoA storage with
+          64-byte alignment for SIMD operations keeps frame times flat.
+        </p>
+      </div>
+
+      <div class="card bg-base-200 card-magical p-8">
+        <div class="text-5xl mb-5" aria-hidden="true">🔮</div>
+        <h3 class="text-2xl font-display mb-3" style="color: oklch(72% 0.26 135);">Integrated ImGui Editor</h3>
+        <p class="leading-relaxed" style="color: oklch(78% 0.04 280);">
+          Dear ImGui is baked in, not bolted on. Inspect entities, live-edit component
+          values, run Lua from the console, and read the profiler — all within the same
+          window as the running game. Dockable layout, persisted across sessions.
+        </p>
+      </div>
+
+      <div class="card bg-base-200 card-magical p-8">
+        <div class="text-5xl mb-5" aria-hidden="true">🌍</div>
+        <h3 class="text-2xl font-display mb-3" style="color: oklch(72% 0.26 135);">Multi-Platform Shipping</h3>
+        <p class="leading-relaxed" style="color: oklch(78% 0.04 280);">
+          One CMake project targets Windows, Linux, macOS, and Android. SDL3 handles
+          the platform abstraction; vcpkg handles the dependency graph. A unified
+          pipeline produces NSIS installers, TGZ archives, DMGs, and APKs.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{# ═══════════════════════════════════════════════════════════════
+   TECH STACK
+════════════════════════════════════════════════════════════════ #}
+<section class="py-28 px-6" id="stack"
+         style="background: oklch(11% 0.03 280 / 0.4);">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-20">
+      <div class="text-accent text-2xl mb-4 opacity-50" aria-hidden="true">✦</div>
+      <h2 class="text-4xl md:text-5xl font-display glow-gold mb-4"
+          style="color: oklch(78% 0.18 58);">
+        The Ingredients
+      </h2>
+      <p class="italic" style="color: oklch(55% 0.05 280);">
+        "Good magic requires quality components"
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+      {% set techs = [
+        { name: "C++20",       desc: "Core engine",        icon: "⚙️",  hue: "305" },
+        { name: "SDL3",        desc: "Rendering & input",  icon: "🖼️",  hue: "200" },
+        { name: "Lua 5.4",     desc: "Game scripting",     icon: "📜",  hue: "135" },
+        { name: "GLM",         desc: "Math library",       icon: "📐",  hue: "58"  },
+        { name: "Dear ImGui",  desc: "Editor UI",          icon: "🧰",  hue: "305" },
+        { name: "vcpkg",       desc: "Dependency management", icon: "📦", hue: "200" }
+      ] %}
+      {% for tech in techs %}
+      <div class="card bg-base-200 card-magical p-6 text-center">
+        <div class="text-4xl mb-3" aria-hidden="true">{{ tech.icon }}</div>
+        <div class="text-lg font-display font-bold text-primary">{{ tech.name }}</div>
+        <div class="text-sm mt-1" style="color: oklch(55% 0.05 280);">{{ tech.desc }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+{# ═══════════════════════════════════════════════════════════════
+   CODE EXAMPLE
+════════════════════════════════════════════════════════════════ #}
+<section class="py-28 px-6" id="code">
+  <div class="max-w-4xl mx-auto">
+
+    <div class="text-center mb-16">
+      <div class="text-secondary text-2xl mb-4 opacity-50" aria-hidden="true">✦</div>
+      <h2 class="text-4xl md:text-5xl font-display mb-4"
+          style="color: oklch(72% 0.26 135);">
+        See the Spell
+      </h2>
+      <p class="italic" style="color: oklch(55% 0.05 280);">
+        "Write Lua. Ship games."
+      </p>
+    </div>
+
+    <div class="card card-magical overflow-hidden" style="background: oklch(6% 0.02 280);">
+      {# Faux terminal title bar #}
+      <div class="flex items-center gap-2 px-4 py-3"
+           style="background: oklch(13% 0.03 280); border-bottom: 1px solid oklch(65% 0.28 305 / 0.15);">
+        <div class="w-3 h-3 rounded-full" style="background: oklch(62% 0.26 25 / 0.7);"></div>
+        <div class="w-3 h-3 rounded-full" style="background: oklch(80% 0.20 70 / 0.7);"></div>
+        <div class="w-3 h-3 rounded-full" style="background: oklch(65% 0.22 150 / 0.7);"></div>
+        <span class="ml-3 text-xs font-mono" style="color: oklch(45% 0.04 280);">
+          game/scenes/world.lua
+        </span>
+      </div>
+
+      <div class="p-6 overflow-x-auto">
+{% highlight "lua" %}
+-- Spawn a player entity and wire up movement logic
+local player = World.create_entity()
+
+World.add_component(player, "Transform", {
+  x = 100, y = 200,
+  scale_x = 1.0, scale_y = 1.0,
+  rotation = 0.0,
+})
+
+World.add_component(player, "Sprite", {
+  texture_path = "assets/sprites/player.png",
+  layer = 1,
+})
+
+World.add_component(player, "RigidBody", {
+  velocity_x = 0.0,
+  velocity_y = 0.0,
+})
+
+-- Script component: runs on_update every frame
+World.add_component(player, "Script", {
+  on_update = function(entity, dt)
+    local rb = World.get_component(entity, "RigidBody")
+
+    local speed = 200.0
+    rb.velocity_x = 0.0
+    rb.velocity_y = 0.0
+
+    if Input.is_key_held(Key.D) then rb.velocity_x =  speed end
+    if Input.is_key_held(Key.A) then rb.velocity_x = -speed end
+    if Input.is_key_held(Key.W) then rb.velocity_y = -speed end
+    if Input.is_key_held(Key.S) then rb.velocity_y =  speed end
+  end,
+})
+{% endhighlight %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+{# ═══════════════════════════════════════════════════════════════
+   PLATFORM SUPPORT
+════════════════════════════════════════════════════════════════ #}
+<section class="py-28 px-6" id="platforms"
+         style="background: oklch(11% 0.03 280 / 0.4);">
+  <div class="max-w-4xl mx-auto">
+
+    <div class="text-center mb-20">
+      <div class="text-primary text-2xl mb-4 opacity-50" aria-hidden="true">✦</div>
+      <h2 class="text-4xl md:text-5xl font-display glow-octarine mb-4">
+        Realms Supported
+      </h2>
+      <p class="italic" style="color: oklch(55% 0.05 280);">
+        "Magic travels far"
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {% set platforms = [
+        { name: "Windows", icon: "🪟" },
+        { name: "Linux",   icon: "🐧" },
+        { name: "macOS",   icon: "🍎" },
+        { name: "Android", icon: "🤖" }
+      ] %}
+      {% for platform in platforms %}
+      <div class="card bg-base-200 card-magical p-8 text-center">
+        <div class="text-5xl mb-4" aria-hidden="true">{{ platform.icon }}</div>
+        <div class="text-lg font-display text-primary">{{ platform.name }}</div>
+        <div class="mt-3">
+          <span class="badge badge-success badge-sm">Supported</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+{# ═══════════════════════════════════════════════════════════════
+   CTA + FOOTER
+════════════════════════════════════════════════════════════════ #}
+<footer class="py-28 px-6 text-center" id="get-started">
+  <div class="max-w-3xl mx-auto">
+
+    <div class="text-primary text-3xl mb-10 opacity-40 tracking-widest" aria-hidden="true">
+      ✦ &nbsp;✦ &nbsp;✦
+    </div>
+
+    <h2 class="text-4xl md:text-5xl font-display glow-gold mb-4"
+        style="color: oklch(78% 0.18 58);">
+      Begin Your Conjuring
+    </h2>
+
+    <p class="text-lg mb-3 leading-relaxed" style="color: oklch(72% 0.04 280);">
+      MIT licensed. No royalties. No subscription. No dark bargains.
+    </p>
+    <p class="text-base mb-12" style="color: oklch(50% 0.05 280);">
+      Get started in minutes — CMake, vcpkg, and a C++20 compiler is all you need.
+    </p>
+
+    <div class="flex flex-wrap gap-4 justify-center mb-12">
+      <a href="https://github.com/mblackman/Octarine-Engine"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn-lg btn-magical px-8">
+        ✦ &nbsp;View on GitHub
+      </a>
+      <a href="https://github.com/mblackman/Octarine-Engine/blob/main/docs/QUICKSTART.md"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn-lg btn-outline px-8"
+         style="border-color: oklch(65% 0.28 305 / 0.5); color: oklch(75% 0.15 305);">
+        Read the Docs
+      </a>
+    </div>
+
+    <div class="flex justify-center gap-3 flex-wrap mb-14">
+      <span class="badge badge-lg badge-outline" style="border-color: oklch(65% 0.28 305 / 0.5); color: oklch(65% 0.28 305);">MIT License</span>
+      <span class="badge badge-lg badge-outline" style="border-color: oklch(72% 0.26 135 / 0.5); color: oklch(72% 0.26 135);">C++20</span>
+      <span class="badge badge-lg badge-outline" style="border-color: oklch(78% 0.18 58 / 0.5); color: oklch(78% 0.18 58);">Open Source</span>
+    </div>
+
+    <div style="border-top: 1px solid oklch(65% 0.28 305 / 0.1); padding-top: 2rem;">
+      <p class="text-base italic mb-2" style="color: oklch(40% 0.04 280);">
+        "Octarine is the colour of magic itself."
+      </p>
+      <p class="text-sm" style="color: oklch(32% 0.03 280);">
+        — Terry Pratchett, <em>The Colour of Magic</em>
+      </p>
+      <p class="text-xs mt-6" style="color: oklch(28% 0.03 280);">
+        © {{ "" | currentYear }} Octarine Engine Contributors &nbsp;·&nbsp;
+        Built with
+        <a href="https://www.11ty.dev" target="_blank" rel="noopener"
+           class="underline decoration-dotted hover:opacity-70">Eleventy</a>,
+        <a href="https://tailwindcss.com" target="_blank" rel="noopener"
+           class="underline decoration-dotted hover:opacity-70">Tailwind CSS</a>, and
+        <a href="https://daisyui.com" target="_blank" rel="noopener"
+           class="underline decoration-dotted hover:opacity-70">DaisyUI</a>
+      </p>
+    </div>
+
+  </div>
+</footer>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="octarine">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title | default("Octarine Engine — The Color of Magic, in Your Code") }}</title>
+  <meta name="description" content="{{ description | default('A lightweight C++20 2D game engine. Lua-first scripting, archetype ECS, SDL3 rendering, and an integrated ImGui editor. MIT licensed.') }}">
+  <meta property="og:title"       content="{{ title | default('Octarine Engine') }}">
+  <meta property="og:description" content="{{ description | default('A lightweight C++20 2D game engine with Lua-first scripting and an integrated editor.') }}">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://engine.octarine.club">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles/main.css">
+
+  <!-- Inline SVG favicon — octarine sparkle -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+</head>
+<body class="min-h-screen">
+
+  <!-- Starfield canvas — fixed behind all content -->
+  <canvas id="starfield" class="fixed inset-0 w-full h-full pointer-events-none" style="z-index:0"></canvas>
+
+  <!-- Page content -->
+  <div class="relative" style="z-index:1">
+    {{ content | safe }}
+  </div>
+
+  <script src="/assets/js/stars.js"></script>
+</body>
+</html>
