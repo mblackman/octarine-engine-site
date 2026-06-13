@@ -201,39 +201,44 @@ description: "A lightweight C++20 2D game engine. Lua-first scripting, archetype
 
       <div class="p-6 overflow-x-auto">
 {% highlight "lua" %}
--- Spawn a player entity and wire up movement logic
-local player = World.create_entity()
+-- bind movement actions to keys
+input.bind("move_right", "d")
+input.bind("move_left",  "a")
+input.bind("move_up",    "w")
+input.bind("move_down",  "s")
 
-World.add_component(player, "Transform", {
-  x = 100, y = 200,
-  scale_x = 1.0, scale_y = 1.0,
-  rotation = 0.0,
-})
+-- spawn the player entity
+load_entity({
+    tag  = "player",
+    name = "Player",
+    components = {
+        transform     = { position = { x = 400, y = 300 } },
+        sprite        = { texture_asset_id = "player", width = 32, height = 32, layer = 2 },
+        rigidbody     = { velocity = { x = 0, y = 0 } },
+        camera_follow = {},
 
-World.add_component(player, "Sprite", {
-  texture_path = "assets/sprites/player.png",
-  layer = 1,
-})
+        -- script component: on_update runs every frame
+        script = {
+            speed = 120,
+            on_update = function(self, entity, dt)
+                local dx, dy = 0, 0
+                if input.is_action_down("move_right") then dx = dx + 1 end
+                if input.is_action_down("move_left")  then dx = dx - 1 end
+                if input.is_action_down("move_up")    then dy = dy - 1 end
+                if input.is_action_down("move_down")  then dy = dy + 1 end
 
-World.add_component(player, "RigidBody", {
-  velocity_x = 0.0,
-  velocity_y = 0.0,
-})
-
--- Script component: runs on_update every frame
-World.add_component(player, "Script", {
-  on_update = function(entity, dt)
-    local rb = World.get_component(entity, "RigidBody")
-
-    local speed = 200.0
-    rb.velocity_x = 0.0
-    rb.velocity_y = 0.0
-
-    if Input.is_key_held(Key.D) then rb.velocity_x =  speed end
-    if Input.is_key_held(Key.A) then rb.velocity_x = -speed end
-    if Input.is_key_held(Key.W) then rb.velocity_y = -speed end
-    if Input.is_key_held(Key.S) then rb.velocity_y =  speed end
-  end,
+                local rb = registry.get_rigidbody(entity)
+                if dx ~= 0 or dy ~= 0 then
+                    local len = math.sqrt(dx * dx + dy * dy)
+                    rb.velocity.x = (dx / len) * self.speed
+                    rb.velocity.y = (dy / len) * self.speed
+                else
+                    rb.velocity.x = 0
+                    rb.velocity.y = 0
+                end
+            end,
+        },
+    },
 })
 {% endhighlight %}
       </div>
